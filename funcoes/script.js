@@ -18,3 +18,4 @@ function imc(peso, altura) {
 
 console.log(imc(80, 1.80)); // 80 e 1.80 são argumentos
 imc(60, 1.70); // 60 e 1.70 são os argumentos
+imc(70, 1.80);
