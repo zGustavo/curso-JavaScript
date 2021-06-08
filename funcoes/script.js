@@ -65,20 +65,36 @@ dados(); // Retorna 'André, 29, Rio de Janeiro, Designer'
 // Crie uma função para verificar se um valor é Truthy
 
 function verificar(valor) {
-    if(valor == true){
-        return "é verdadeiro";
-    } else {
-        return "É falso";
-    }
+    return !valor;
 }
-// Crie uma função matemática que retorne o perímetro de um quadr
+// Crie uma função matemática que retorne o perímetro de um quadrado
+function perimetro (lado) {
+    return `O perimetro do quadrado é: ${lado * 4}`;
+}
 // lembrando: perímetro é a soma dos quatro lados do quadrado
 // Crie uma função que retorne o seu nome completo
+
+function nomeCompleto(nome, sobrenome) {
+    return `Nome completo: ${nome} ${sobrenome}`
+}
 // ela deve possuir os parâmetros: nome e sobrenome
 // Crie uma função que verifica se um número é par
+function par(num) {
+    if(num % 2 == 0) {
+        return "número par";
+    } else {
+        return "número impar";
+    }
+}
 // Crie uma função que retorne o tipo de
 // dado do argumento passado nela (typeof)
+function tipoDados (dado) {
+    return typeof(dado);
+}
 // addEventListener é uma função nativa do JavaScript
 // o primeiro parâmetro é o evento que ocorre e o segundo o Callb
 // utilize essa função para mostrar no console o seu nome complet
 // quando o evento 'scroll' ocorrer.
+addEventListener('click', function(){
+    console.log("Gustavo dias")
+})
