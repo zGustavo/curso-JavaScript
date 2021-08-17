@@ -1,25 +1,35 @@
-console.log(Number.isNaN(NaN)); // Retorna true apenas se for NaN   
-console.log(Number.isInteger(5.6)); // Retorna true só para números Inteiros
+// Exercicios
 
-console.log(parseFloat('     3242.125'));
-console.log(parseFloat('100 reais'));
-console.log(parseInt('100 reais'));
+// Retorne um número aleatório
+// entre 1050 e 2000
+const aleatorio = Math.floor(Math.random() * (2000 - 1050 + 1) + 1050)
+console.log(aleatorio);
+
+// Retorne o maior número da lista abaixo
+const numeros = '4, 5, 20, 8, 9';
+const arrayNumeros = numeros.split(', ');
+const numeroMaximo = Math.max(...arrayNumeros);
+
+console.log(numeroMaximo);
 
 
-// De acordo com a localidade
-let valor = 48.49;
-let valor2 = 48.49;
-valor = valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}); // R$ 48,49
-valor2 = valor2.toLocaleString('en-US', {style: 'currency', currency: 'USD'}); // $48.49
 
+// Crie uma função para limpar os preços
+// e retornar os números com centavos arredondados
+// depois retorne a soma total
+const listaPrecos = ['R$ 59,99', ' R$ 100,222',
+'R$ 230 ', 'r$ 200'];
 
-// Math.
-console.log(Math.PI); // 3.141592653589793
-console.log(Math.abs(-5.5)); //5.5
-console.log(Math.ceil(4.8334)); // 5
-console.log(Math.ceil(4.3)); // 5
-console.log(Math.floor(4.3)); // 4
-console.log(Math.floor(4.8334)); // 4
-console.log(Math.round(4.8334)); // 5
-console.log(Math.round(4.3)); // 4
+function limparPreco(preco) {
+    preco = +preco.toUpperCase().replace('R$', "").trim().replace(',', '.');
+    preco = +preco.toFixed(2);
+    return preco;
+}
 
+let soma = 0;
+listaPrecos.forEach((preco) => {
+    soma += limparPreco(preco);
+})
+
+console.log(soma);
+limparPreco(listaPrecos[0]);
